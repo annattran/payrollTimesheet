@@ -1,0 +1,183 @@
+/* HTML AND BODY STYLES ------------------------------------------------------------------*/
+html {
+    font-size: 62.5%;
+    font-family:sans-serif;
+    background: #4CA1AF; 
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, #C4E0E5, #4CA1AF);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, #C4E0E5, #4CA1AF);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+body {
+    font-size: 1.6rem;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+}
+
+
+/* TYPOGRAPHY STYLES ------------------------------------------------------------------*/
+h1, h2 {
+	margin:0;
+}
+
+h1 {
+    margin-top:20px;
+}
+
+h2 {
+    padding:10px;
+    font-size:2rem;
+}
+
+p {
+	line-height:1.5;
+}
+
+
+/* FORM STYLES ------------------------------------------------------------------*/
+form {
+    width: 80%;
+    padding:30px 50px;
+    border:1px solid black;
+    margin:25px 0px;
+    background:white;
+}
+
+form.earnings {
+    display:flex;
+    justify-content:center;
+    align-content:center;
+    flex-direction:column;
+}
+
+.columns, div.earnings {
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:space-between;
+}
+
+.columns div {
+    display:flex;
+    flex-direction:column;
+    width:20%;
+}
+
+.timesheet div.hoursworked {
+    margin-bottom:20px;
+}
+
+div.earnings {
+    margin-top:20px;
+}
+
+
+/* LABEL STYLES ------------------------------------------------------------------*/
+label {
+    background: #4CA1AF;
+    font-weight:bold;
+    color:white;
+    border-right:1px solid white;
+    padding:2px 0px 2px 10px;
+}
+
+.hoursworked label, form.earnings label {
+    border:none;
+}
+
+
+/* INPUT STYLES ------------------------------------------------------------------*/
+input {
+    height:50px;
+    font-size:2rem;
+    padding:10px
+}
+
+input:read-only:hover {
+    cursor:not-allowed;
+}
+
+input[type=date]::-webkit-inner-spin-button,
+input[type=time]::-webkit-inner-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    display: none;
+}
+
+input[type=date]:focus,
+input[type=time]:focus,
+input[type=number]:focus,
+input[type=text]:focus {
+    background:rgba(76, 161, 175,0.2);
+}
+
+input[type=date], input[type=time] {
+    font:inherit;
+}
+
+
+/* INPUT[TYPE=SUBMIT] STYLES -------------- */
+input[type=submit] {
+    background:#4CA1AF;
+    color:white;
+    border:1px solid #4CA1AF;
+    transition:all .3s;
+}
+
+input[type=submit]:hover {
+    color:#4CA1AF;
+    background:white;
+    border:1px solid #4CA1AF;
+    cursor:pointer;
+}
+
+/* INPUT[TYPE=DATE] STYLES -------------- */
+input[type=date] {
+    position: relative;
+    padding: 10px;
+}
+  
+input[type=date]::-webkit-calendar-picker-indicator {
+    color: transparent;
+    background: none;
+    z-index: 1;
+    top:0;
+    right:0;
+    bottom:0;
+    left:0;
+    padding:15px;
+    cursor:pointer;
+}
+  
+input[type=date]:before {
+    display: block;
+    font-size:2rem;
+    content: '📆';
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    color: #4CA1AF;
+    padding:5px;
+    transition: all .3s;
+}
+
+input[type=date]:hover:before {
+    opacity:0.5;
+}
+
+
+/* SPAN STYLES ------------------------------------------------------------------*/
+span.name {
+    color:#4CA1AF;
+}
+
+span.hoursworked, span.earnings {
+    color:rgba(0,0,0,0.5);
+    font-style:italic;
+    padding:10px;
+    font-weight:normal;
+}
+
