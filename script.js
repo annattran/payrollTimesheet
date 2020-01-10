@@ -18,20 +18,23 @@ $(document).ready(function () {
 
 
     // PROMPT ---------------------------------------------------------------
-    const name = prompt('Please enter your first and last name.');
-
-    if (name != '') {
-        // if name is not blank
-        $('.name').text(name);
-        // use jQuery method: .text()
-        // to display name that the user entered on prompt
-    } else {
-        // if name is blank
-        $('.name').text('there');
-        // use jQuery method: .text()
-        // to display "Hi there!"
-    }
-
+    Swal.fire({
+        title: 'Please enter your first and last name.',
+        input: 'text',
+        inputValidator: (value) => {
+            if (!value) {
+                // if nothing entered
+                $('.name').text('there');
+                // use jQuery method: .text()
+                // to display "Hi there!"
+            } else {
+                // if something entered
+                $('.name').text(value);
+                // use jQuery method: .text()
+                // to display name that the user entered on prompt
+            }
+        }
+    });
 
     // EVENT LISTENERS ON FORM -------------------------------------------------------
     $('form').on('input', function() {
@@ -304,7 +307,7 @@ $(document).ready(function () {
             // the return value of the function is a single value (total hours worked)
         }, 0);
 
-        $('span.hoursworked').text(totalHoursWorked + ' hours')
+        $('span.hoursworked').text((totalHoursWorked).toFixed(2) + ' hours')
         // using jQuery method: .text()
         // display the value
     }
@@ -325,7 +328,7 @@ $(document).ready(function () {
         // get the value representing hourly rate
         // note this is typeof string
 
-        let grossEarnings = parseFloat(totalHours) * parseFloat(hourlyRate);
+        let grossEarnings = (parseFloat(totalHours) * parseFloat(hourlyRate)).toFixed(2);
         // using JS function: parseFloat()
         // write the quotient
 
