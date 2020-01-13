@@ -35,6 +35,22 @@ $(document).ready(function () {
             }
         }
     });
+    
+    // EVENT LISTENERS ON WINDOW -------------------------------------------------------
+    const hiddenLabels = document.getElementsByClassName("hiddenLabel");
+
+    window.addEventListener("resize", function () {
+        for (i = 0; i < hiddenLabels.length; i++) {
+            const eachHiddenLabel = hiddenLabels[i];
+
+            //when window is smaller than 780 pixels
+            if (window.matchMedia("(max-width:780px)").matches) {
+                eachHiddenLabel.classList.remove("visuallyHidden");
+            } else {
+                eachHiddenLabel.classList.add("visuallyHidden");
+            }
+        }
+    });
 
     // EVENT LISTENERS ON FORM -------------------------------------------------------
     $('form').on('input', function() {

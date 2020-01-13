@@ -13,59 +13,174 @@
     <form class="timesheet">
         <h1>Weekly Timesheet</h1>
         <p>Hi <span class="name"></span>! Please fill in the first 4 columns. This time card will calculate your total hours worked.</p>
-        <div class="columns">
-            <div class="date">
-                <label for="date">Date</label>
+        <div class="table">
+            <div class="row row1">
+                <p class="columnHeader date">Date</p>
+                <div class="subrow">
+                    <p class="columnHeader timein">Time In</p>
+                    <p class="columnHeader timeout">Time Out</p>
+                    <p class="columnHeader break">Break (in minutes)</p>
+                    <p class="columnHeader hoursworked">Hours Worked</p>
+                </div>
+            </div>
+            <div class="row row2">
+                <label for="date" class="visuallyHidden hiddenLabel hiddenLabel">Date</label>
                 <input type="date" id="datepicker" placeholder="MM/DD">
+                <div class="subrow">
+                    <div class="data">
+                        <label for="timein" class="visuallyHidden hiddenLabel">Time In</label>
+                        <input type="time" id="timein1" placeholder="00:00" required>
+                    </div>
+                    <div class="data">
+                        <label for="timeout" class="visuallyHidden hiddenLabel">Time Out</label>
+                        <input type="time" id="timeout1" placeholder="00:00" required>
+                    </div>
+                    <div class="data">
+                        <label for="break" class="visuallyHidden hiddenLabel">Break (in minutes)</label>
+                        <input type="number" id="break1" placeholder="e.g. 30" required>
+                    </div>
+                    <div class="data">
+                        <label for="hoursworked" class="visuallyHidden hiddenLabel">Hours Worked</label>
+                        <input type="text" id="hoursworked0" placeholder="Day 1" readonly>
+                    </div>
+                </div>
+            </div>
+            <div class="row row3">
+                <label for="date" class="visuallyHidden hiddenLabel">Date</label>
                 <input type="date" id="date2" placeholder="MM/DD" readonly>
+                <div class="subrow">
+                    <div class="data">
+                        <label for="timein" class="visuallyHidden hiddenLabel">Time In</label>
+                        <input type="time" id="timein2" placeholder="00:00" required>
+                    </div>
+                    <div class="data">
+                        <label for="timeout" class="visuallyHidden hiddenLabel">Time Out</label>
+                        <input type="time" id="timeout2" placeholder="00:00" required>
+                    </div>
+                    <div class="data">
+                        <label for="break" class="visuallyHidden hiddenLabel">Break (in minutes)</label>
+                        <input type="number" id="break2" placeholder="e.g. 30" required>
+                    </div>
+                    <div class="data">
+                        <label for="hoursworked" class="visuallyHidden hiddenLabel">Hours Worked</label>
+                        <input type="text" id="hoursworked1" placeholder="Day 2" readonly>
+                    </div>
+                </div>
+            </div>
+            <div class="row row4">
+                <label for="date" class="visuallyHidden hiddenLabel">Date</label>
                 <input type="date" id="date3" placeholder="MM/DD" readonly>
+                <div class="subrow">
+                    <div class="data">
+                        <label for="timein" class="visuallyHidden hiddenLabel">Time In</label>
+                        <input type="time" id="timein3" placeholder="00:00" required>
+                    </div>
+                    <div class="data">
+                        <label for="timeout" class="visuallyHidden hiddenLabel">Time Out</label>
+                        <input type="time" id="timeout3" placeholder="00:00" required>
+                    </div>
+                    <div class="data">
+                        <label for="break" class="visuallyHidden hiddenLabel">Break (in minutes)</label>
+                        <input type="number" id="break3" placeholder="e.g. 30" required>
+                    </div>
+                    <div class="data">
+                        <label for="hoursworked" class="visuallyHidden hiddenLabel">Hours Worked</label>
+                        <input type="text" id="hoursworked2" placeholder="Day 3" readonly>
+                    </div>
+                </div>
+            </div>
+            <div class="row row5">
+                <label for="date" class="visuallyHidden hiddenLabel">Date</label>
                 <input type="date" id="date4" placeholder="MM/DD" readonly>
+                <div class="subrow">
+                    <div class="data">
+                        <label for="timein" class="visuallyHidden hiddenLabel">Time In</label>
+                        <input type="time" id="timein4" placeholder="00:00" required>
+                    </div>
+                    <div class="data">
+                        <label for="timeout" class="visuallyHidden hiddenLabel">Time Out</label>
+                        <input type="time" id="timeout4" placeholder="00:00" required>
+                    </div>
+                    <div class="data">
+                        <label for="break" class="visuallyHidden hiddenLabel">Break (in minutes)</label>
+                        <input type="number" id="break4" placeholder="e.g. 30" required>
+                    </div>
+                    <div class="data">
+                        <label for="hoursworked" class="visuallyHidden hiddenLabel">Hours Worked</label>
+                        <input type="text" id="hoursworked3" placeholder="Day 4" readonly>
+                    </div>
+                </div>
+            </div>
+            <div class="row row6">
+                <label for="date" class="visuallyHidden hiddenLabel">Date</label>
                 <input type="date" id="date5" placeholder="MM/DD" readonly>
+                <div class="subrow">
+                    <div class="data">
+                        <label for="timein" class="visuallyHidden hiddenLabel">Time In</label>
+                        <input type="time" id="timein5" placeholder="00:00" required>
+                    </div>
+                    <div class="data">
+                        <label for="timeout" class="visuallyHidden hiddenLabel">Time Out</label>
+                        <input type="time" id="timeout5" placeholder="00:00" required>
+                    </div>
+                    <div class="data">
+                        <label for="break" class="visuallyHidden hiddenLabel">Break (in minutes)</label>
+                        <input type="number" id="break5" placeholder="e.g. 30" required>
+                    </div>
+                    <div class="data">
+                        <label for="hoursworked" class="visuallyHidden hiddenLabel">Hours Worked</label>
+                        <input type="text" id="hoursworked4" placeholder="Day 5" readonly>
+                    </div>
+                </div>
+            </div>
+            <div class="row row7">
+                <label for="date" class="visuallyHidden hiddenLabel">Date</label>
                 <input type="date" id="date6" placeholder="MM/DD" readonly>
+                <div class="subrow">
+                    <div class="data">
+                        <label for="timein" class="visuallyHidden hiddenLabel">Time In</label>
+                        <input type="time" id="timein6" placeholder="00:00" required>
+                    </div>
+                    <div class="data">
+                        <label for="timeout" class="visuallyHidden hiddenLabel">Time Out</label>
+                        <input type="time" id="timeout6" placeholder="00:00" required>
+                    </div>
+                    <div class="data">
+                        <label for="break" class="visuallyHidden hiddenLabel">Break (in minutes)</label>
+                        <input type="number" id="break6" placeholder="e.g. 30" required>
+                    </div>
+                    <div class="data">
+                        <label for="hoursworked" class="visuallyHidden hiddenLabel">Hours Worked</label>
+                        <input type="text" id="hoursworked5" placeholder="Day 6" readonly>
+                    </div>
+                </div>
+            </div>
+            <div class="row row8">
+                <label for="date" class="visuallyHidden hiddenLabel">Date</label>
                 <input type="date" id="date7" placeholder="MM/DD" readonly>
-            </div>
-            <div class="timein">
-                <label for="timein">Time In</label>
-                <input type="time" id="timein1" placeholder="00:00" required>
-                <input type="time" id="timein2" placeholder="00:00" required>
-                <input type="time" id="timein3" placeholder="00:00" required>
-                <input type="time" id="timein4" placeholder="00:00" required>
-                <input type="time" id="timein5" placeholder="00:00" required>
-                <input type="time" id="timein6" placeholder="00:00" required>
-                <input type="time" id="timein7" placeholder="00:00" required>
-            </div>
-            <div class="timeout">
-                <label for="timeout">Time Out</label>
-                <input type="time" id="timeout1" placeholder="00:00" required>
-                <input type="time" id="timeout2" placeholder="00:00" required>
-                <input type="time" id="timeout3" placeholder="00:00" required>
-                <input type="time" id="timeout4" placeholder="00:00" required>
-                <input type="time" id="timeout5" placeholder="00:00" required>
-                <input type="time" id="timeout6" placeholder="00:00" required>
-                <input type="time" id="timeout7" placeholder="00:00" required>
-            </div>
-            <div class="break">
-                <label for="break">Break (in minutes)</label>
-                <input type="number" id="break1" placeholder="e.g. 30" required>
-                <input type="number" id="break2" placeholder="e.g. 30" required>
-                <input type="number" id="break3" placeholder="e.g. 30" required>
-                <input type="number" id="break4" placeholder="e.g. 30" required>
-                <input type="number" id="break5" placeholder="e.g. 30" required>
-                <input type="number" id="break6" placeholder="e.g. 30" required>
-                <input type="number" id="break7" placeholder="e.g. 30" required>
+                <div class="subrow">
+                    <div class="data">
+                        <label for="timein" class="visuallyHidden hiddenLabel">Time In</label>
+                        <input type="time" id="timein7" placeholder="00:00" required>
+                    </div>
+                    <div class="data">
+                        <label for="timeout" class="visuallyHidden hiddenLabel">Time Out</label>
+                        <input type="time" id="timeout7" placeholder="00:00" required>
+                    </div>
+                    <div class="data">
+                        <label for="break" class="visuallyHidden hiddenLabel">Break (in minutes)</label>
+                        <input type="number" id="break7" placeholder="e.g. 30" required>
+                    </div>
+                    <div class="data">
+                        <label for="hoursworked" class="visuallyHidden hiddenLabel">Hours Worked</label>
+                        <input type="text" id="hoursworked6" placeholder="Day 7" readonly>
+                    </div>
+                </div>
             </div>
             <div class="hoursworked">
-                <label for="hoursworked">Hours Worked</label>
-                <input type="text" id="hoursworked0" placeholder="Day 1" readonly>
-                <input type="text" id="hoursworked1" placeholder="Day 2" readonly>
-                <input type="text" id="hoursworked2" placeholder="Day 3" readonly>
-                <input type="text" id="hoursworked3" placeholder="Day 4" readonly>
-                <input type="text" id="hoursworked4" placeholder="Day 5" readonly>
-                <input type="text" id="hoursworked5" placeholder="Day 6" readonly>
-                <input type="text" id="hoursworked6" placeholder="Day 7" readonly>
+                <h2>Total Hours Worked:<span class="hoursworked">Your total hours will appear here.</span></h2>
+                <input type="submit" value="Calculate Hours Worked">
             </div>
-            <h2>Total Hours Worked:<span class="hoursworked">Your total hours will appear here.</span></h2>
-            <input type="submit" value="Calculate Hours Worked">
         </div>
     </form>
 

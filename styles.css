@@ -38,12 +38,16 @@ h1 {
 }
 
 h2 {
-    padding:10px;
+    padding:10px 0px;
     font-size:2rem;
 }
 
 p {
-	line-height:1.5;
+    line-height:1.5;
+}
+
+.row p {
+    margin: 0;
 }
 
 
@@ -63,36 +67,48 @@ form.earnings {
     flex-direction:column;
 }
 
-.columns, div.earnings {
+.row, .subrow {
     display:flex;
-    flex-wrap:wrap;
-    justify-content:space-between;
 }
 
-.columns div {
-    display:flex;
-    flex-direction:column;
-    width:20%;
+.row1 > p,
+input[type=date] {
+    width: 20%;
 }
 
-.timesheet div.hoursworked {
-    margin-bottom:20px;
+.subrow {
+    width: 80%;
 }
 
-div.earnings {
-    margin-top:20px;
+.subrow div,
+.subrow p {
+    width: calc(100% / 4);
 }
 
-
-/* LABEL STYLES ------------------------------------------------------------------*/
-label {
+.columnHeader, label {
     background: #4CA1AF;
     font-weight:bold;
     color:white;
     border-right:1px solid white;
+    /* width: 100%; */
+}
+
+.columnHeader {
+    padding:0px 10px;
+}
+
+label {
     padding:2px 10px;
 }
 
+div.hoursworked, div.earnings {
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:space-between;
+    margin-top:20px;
+}
+
+/* LABEL STYLES ------------------------------------------------------------------*/
 .hoursworked label, form.earnings label {
     border:none;
 }
@@ -104,29 +120,6 @@ input {
     font-size:2rem;
     padding:10px;
     width: 100%;
-}
-
-@media (max-width:1150px) {
-    form {
-        width: 90%;
-        padding: 15px 25px;
-    }
-    .columns div {
-        width: 15%;
-    }
-    .columns div:nth-of-type(1),
-    .columns div:nth-of-type(2),
-    .columns div:nth-of-type(3) {
-        width: calc(70% / 3);
-    }
-    label {
-        height:50px;
-        display: flex;
-        align-items: center;
-    }
-    input {
-        font-size:1.6rem;
-    }
 }
 
 input:read-only:hover {
@@ -216,3 +209,59 @@ span.hoursworked, span.earnings {
     font-weight:normal;
 }
 
+/* MEDIA QUERIES STYLES ------------------------------------------------------------------*/
+
+@media (max-width:1150px) {
+    form {
+        width: 90%;
+        padding: 15px 25px;
+    }
+    .row1 > p,
+    input[type=date] {
+        width: 30%;
+    }
+    .columnHeader, label {
+        height:50px;
+        display: flex;
+        align-items: center;
+    }
+    input {
+        height:40px;
+        font-size:1.6rem;
+    }
+    label[for=date] {
+        height:25px;
+    }
+}
+
+@media (max-width:780px) {
+    .row1 p {
+        display:none;
+    }
+    .row {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 20px;
+    }
+    .row1, .row8 {
+        margin-bottom: 0px;
+    }
+    .subrow label {
+        background:none;
+        color:#4CA1AF;
+        border-right:1px solid lightgrey;
+    }
+    label[for="timein"] {
+        border-left:1px solid lightgrey;
+    }
+    input[type=date]:before {
+        top:0px;
+    }
+    input[type=date],
+    .subrow {
+        width: 100%;
+    }
+    div.hoursworked, div.earnings {
+        margin-bottom:20px;
+    }
+}
