@@ -1,7 +1,7 @@
 $(document).ready(function () {
 
     // GLOBAL VARIABLES -----------------------------------------------------
-    let workday = {
+    const workday = {
         // object of arrays
         date:[],
         startTime: [],
@@ -10,11 +10,11 @@ $(document).ready(function () {
         hoursWorked: []
     }
 
-    let $allDateTypeInputs = $('input[type="date"]');
-    let $allTimeInInputs = $('label[for="timein"]').siblings('input[type="time"]');
-    let $allTimeOutInputs = $('label[for="timeout"]').siblings('input[type="time"]');
-    let $allBreakInputs = $('input[type="number"]');
-    let $allHoursWorked = $('input[type="text"]');
+    const $allDateTypeInputs = $('input[type="date"]');
+    const $allTimeInInputs = $('label[for="timein"]').siblings('input[type="time"]');
+    const $allTimeOutInputs = $('label[for="timeout"]').siblings('input[type="time"]');
+    const $allBreakInputs = $('input[type="number"]');
+    const $allHoursWorked = $('input[type="text"]');
 
 
     // PROMPT ---------------------------------------------------------------
@@ -89,12 +89,12 @@ $(document).ready(function () {
             // i. set the date of each subsequent day and ii. make each date visible
 
             // objective i. set the date of each subsequent day 
-            let datepicker = new Date($('#datepicker').val());
+            const datepicker = new Date($('#datepicker').val());
             // using jQuery method: .val() get the value of datepicker
             // using JS method: new Date() "convert" the string to a date object
             // this will allow you to increment the date later
 
-            let nextDay = new Date($('#datepicker').val());
+            const nextDay = new Date($('#datepicker').val());
             // create a variable called nextDay which uses first date as a base
             // typeof is string
             
@@ -132,27 +132,27 @@ $(document).ready(function () {
 
     // FUNCTIONS --------------------------------------------------------------------------
     
-    let getStartTime = function() {
+    const getStartTime = function() {
         // the objective of this function is to get an array of timein values that are typeof date (object)
         
         $allTimeInInputs.each((index) => {
             // use jQuery method .each() to create a function that will execute for each timein input
 
-            let timeinString = $(`#timein${index + 1}`).val();
+            const timeinString = $(`#timein${index + 1}`).val();
             // using jQuery method: .val()
             // get the value of each timein input
             // inputs return typeof string
 
-            let timeinObject = timeinString.split(':');
+            const timeinObject = timeinString.split(':');
             // remove the colons
             // this returns typeof object
             // note the values in each index are still typeof string
             
-            let timeinHour = timeinObject[0];
-            let timeinMinute = timeinObject[1];
+            const timeinHour = timeinObject[0];
+            const timeinMinute = timeinObject[1];
             // assign each index to a variable
             
-            let startingTime = new Date("1970-1-1 " + `${timeinHour}:${timeinMinute}`);
+            const startingTime = new Date("1970-1-1 " + `${timeinHour}:${timeinMinute}`);
             // using JS method: new Date()
             // "convert" timein input with typeof string to typeof date (object)
 
@@ -170,27 +170,27 @@ $(document).ready(function () {
     }
 
 
-    let getEndTime = function() {
+    const getEndTime = function() {
         // the objective of this function is to get an array of timeout values that are typeof date (object)
 
         $allTimeOutInputs.each((index) => {
             // use jQuery method .each() to create a function that will execute for each timeout input
 
-            let timeoutString = $(`#timeout${index + 1}`).val();
+            const timeoutString = $(`#timeout${index + 1}`).val();
             // using jQuery method: .val()
             // get the value of each timeout input
             // inputs return typeof string
 
-            let timeoutObject = timeoutString.split(':');
+            const timeoutObject = timeoutString.split(':');
             // remove the colons
             // this returns typeof object
             // note the values in each index are still typeof string
 
-            let timeoutHour = timeoutObject[0];
-            let timeoutMinute = timeoutObject[1];
+            const timeoutHour = timeoutObject[0];
+            const timeoutMinute = timeoutObject[1];
             // assign each index to a variable
             
-            let endingTime = new Date("1970-1-1 " + `${timeoutHour}:${timeoutMinute}`);
+            const endingTime = new Date("1970-1-1 " + `${timeoutHour}:${timeoutMinute}`);
             // using JS method: new Date()
             // "convert" timeout input with typeof string to typeof date (object)
 
@@ -208,18 +208,18 @@ $(document).ready(function () {
     }
 
 
-    let getBreakTime = function() {
+    const getBreakTime = function() {
         // the objective of this function is to get an array of breaktime values that are typeof number
 
         $allBreakInputs.each((index) => {
             // use jQuery method .each() to create a function that will execute for each break input
 
-            let breakString = $(`#break${index + 1}`).val();
+            const breakString = $(`#break${index + 1}`).val();
             // using jQuery method: .val()
             // get the value of each breaktime input
             // input returns typeof string
 
-            let breakTime = parseFloat(breakString);
+            const breakTime = parseFloat(breakString);
             // using JS function: parseFloat()
             // "convert" breaktime input with typeof string to typeof number
 
@@ -234,24 +234,24 @@ $(document).ready(function () {
     }
     
 
-    let getHoursWorked = function() {
+    const getHoursWorked = function() {
         // the objective of this function is to calculate hours worked each day
         // and to make these values visible
         // quotient will look like: endTime - startTime
         // desired return: number with 2 decimals max.
 
-        for(let i=0; i < 7; i++) {
+        for(const i=0; i < 7; i++) {
 
-            let endTimeNumber = workday.endTime[i]/1000/60/60;
+            const endTimeNumber = workday.endTime[i]/1000/60/60;
             // "convert" each date (object) in our workday.endTime array to hours
 
-            let startTimeNumber = workday.startTime[i]/1000/60/60;
+            const startTimeNumber = workday.startTime[i]/1000/60/60;
             // "convert" each date (object) in our workday.startTime array to hours
 
-            let breakTimeNumber = workday.breakTime[i]/60;
+            const breakTimeNumber = workday.breakTime[i]/60;
             // "convert" each number in our workday.breakTime array from minutes to hours
 
-            let totalHoursWorked = (((endTimeNumber) - (startTimeNumber))-breakTimeNumber).toFixed(2)
+            const totalHoursWorked = (((endTimeNumber) - (startTimeNumber))-breakTimeNumber).toFixed(2)
             // store the quotient inside a variable
             // use JS method: toFixed() to specify number of decimals
 
@@ -275,12 +275,12 @@ $(document).ready(function () {
     }
 
 
-    let getTotalHoursWorked = function() {
+    const getTotalHoursWorked = function() {
         // the objective of this function is to calculate total hours worked
         // and to make these values visible
         // quotient will look like: (endTime - startTime) - breakTime
 
-        let hoursToAdd = workday.hoursWorked.map(function(index) {
+        const hoursToAdd = workday.hoursWorked.map(function(index) {
             // using JS method: .map()
             // create a new array based on our array: workday.hoursWorked
             // this array should return the same values but with typeof number
@@ -290,7 +290,7 @@ $(document).ready(function () {
             // "convert" each value in workday.hoursWorked with typeof string to typeof number
         });
 
-        let totalHoursWorked = hoursToAdd.reduce(function(a,b) {
+        const totalHoursWorked = hoursToAdd.reduce(function(a,b) {
             // using JS method: .reduce()
             // add each value in the array
             
@@ -304,22 +304,22 @@ $(document).ready(function () {
     }
 
 
-    let getGrossEarnings = function() {
+    const getGrossEarnings = function() {
         // the objective of this function is to calculate gross earnings
         // and to make these values visible
         // quotient will look like: total hours x hourly rate
 
-        let totalHours = $('span.hoursworked').text();
+        const totalHours = $('span.hoursworked').text();
         // using jQuery method: .text()
         // get the value representing total hours 
         // note this is typeof string
 
-        let hourlyRate = $('#hourlyrate').val();
+        const hourlyRate = $('#hourlyrate').val();
         // using jQuery method: .val()
         // get the value representing hourly rate
         // note this is typeof string
 
-        let grossEarnings = (parseFloat(totalHours) * parseFloat(hourlyRate)).toFixed(2);
+        const grossEarnings = (parseFloat(totalHours) * parseFloat(hourlyRate)).toFixed(2);
         // using JS function: parseFloat()
         // write the quotient
 
