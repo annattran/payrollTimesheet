@@ -11,8 +11,8 @@ $(document).ready(function () {
     }
 
     let $allDateTypeInputs = $('input[type="date"]');
-    let $allTimeInInputs = $('.timein').find('input[type="time"]');
-    let $allTimeOutInputs = $('.timeout').find('input[type="time"]');
+    let $allTimeInInputs = $('label[for="timein"]').siblings('input[type="time"]');
+    let $allTimeOutInputs = $('label[for="timeout"]').siblings('input[type="time"]');
     let $allBreakInputs = $('input[type="number"]');
     let $allHoursWorked = $('input[type="text"]');
 
@@ -126,31 +126,6 @@ $(document).ready(function () {
             $(`#date${index + 1}`).val(`${year}-${month}-${day}`)
             // using jQuery method .val()
             // display the value of each date type input
-
-
-            // // INCOMPLETE CODE ---------------------------------------------------------------------
-            // // I wanted to use the dates from this array inside getStartTime() and getEndTime()
-            // // as opposed to using "1970-1-1 "
-            // // However I couldn't figure out how to make it work.
-
-            // let dates = $(`#date${index + 1}`).val();
-            // workday.date.push(dates);
-            
-            // let secondDate = new Date($(`#date2`).val());
-            // let firstDateMonth = '' + (secondDate.getMonth() + 1);
-            // let firstDateDay = '' + secondDate.getDate();           
-            // let firstDateYear = secondDate.getFullYear();
-
-            // if (firstDateMonth.length < 2) {
-            //     firstDateMonth = '0' + firstDateMonth;
-            // }
-            // if (firstDateDay.length < 2) {
-            //     firstDateDay = '0' + firstDateDay;
-            // }
-            
-            // let defineFirstDate = firstDateYear + '-' + firstDateMonth + '-' + firstDateDay;
-
-            // workday.date[0] = defineFirstDate;
         });   
     }); 
 
