@@ -240,7 +240,7 @@ $(document).ready(function () {
         // quotient will look like: endTime - startTime
         // desired return: number with 2 decimals max.
 
-        for(const i=0; i < 7; i++) {
+        for(let i=0; i < 7; i++) {
 
             const endTimeNumber = workday.endTime[i]/1000/60/60;
             // "convert" each date (object) in our workday.endTime array to hours

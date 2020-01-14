@@ -226,11 +226,11 @@ span.hoursworked, span.earnings {
         align-items: center;
     }
     input {
-        height:40px;
+        height:50px;
         font-size:1.6rem;
     }
-    label[for=date] {
-        height:25px;
+    input[type=date]:before {
+        top:0px;
     }
 }
 
@@ -254,8 +254,11 @@ span.hoursworked, span.earnings {
     label[for="timein"] {
         border-left:1px solid lightgrey;
     }
-    input[type=date]:before {
-        top:0px;
+    input {
+        height:40px;
+    }
+    label[for=date] {
+        height:25px;
     }
     input[type=date],
     .subrow {
